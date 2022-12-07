@@ -11,8 +11,9 @@ class GpsApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'GPS Tracker',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.purple,
       ),
+      debugShowCheckedModeBanner: false,
       home: const PermissionPage(),
     );
   }
