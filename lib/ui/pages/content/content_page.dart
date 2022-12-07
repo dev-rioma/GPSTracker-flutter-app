@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:geolocator_platform_interface/src/enums/location_accuracy_status.dart';
 import 'package:geolocator_platform_interface/src/models/position.dart';
 import 'package:get/get.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 class ContentPage extends GetView<LocationController> {
   late final GpsController gpsController = Get.find();
@@ -15,6 +16,7 @@ class ContentPage extends GetView<LocationController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: const Text("GPS Tracker"),
       ),
       body: SafeArea(
@@ -53,7 +55,9 @@ class ContentPage extends GetView<LocationController> {
                         itemCount: controller.locations.length,
                         itemBuilder: (context, index) {
                           final location = controller.locations[index];
-                          return Card(
+                          return Card( 
+                            color: Color.fromARGB(255, 233, 181, 255),
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                             child: ListTile(
                               isThreeLine: true,
                               leading: Icon(
@@ -70,7 +74,7 @@ class ContentPage extends GetView<LocationController> {
                                 },
                                 icon: const Icon(
                                   Icons.delete_forever_rounded,
-                                  color: Colors.red,
+                                  color: Color.fromARGB(255, 255, 221, 83),
                                 ),
                               ),
                             ),
@@ -85,7 +89,25 @@ class ContentPage extends GetView<LocationController> {
                     padding: const EdgeInsets.symmetric(vertical: 8.0),
                     child: ElevatedButton(
                       onPressed: () async {
-                        controller.deleteAll();
+                        Alert(
+                          title: "¡¡¡ATENCION!!!",
+                          desc: "Esta seguro que desea eliminar todos los registros?",
+                          type: AlertType.info,
+                          buttons: [
+                          DialogButton(
+                            color: Colors.grey[600],
+                            child: Text(style: TextStyle(color: Colors.white),"SI"), 
+                            onPressed: () {
+                              controller.deleteAll();
+                              Navigator.pop(context);}),
+                          DialogButton(
+                            color: Colors.purple,
+                            child: Text(style: TextStyle(color: Colors.white),"NO"), 
+                            onPressed: () {
+                              Navigator.pop(context);
+                          })],
+                        context: context)
+                        .show();
                       },
                       child: const Text("Eliminar Todos"),
                     ),
