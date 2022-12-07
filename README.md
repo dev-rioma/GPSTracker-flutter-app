@@ -1,13 +1,21 @@
-# f_gps_tracker
 
-Un template para una aplicación de registro de ubicación usando la Hive y GeoLocator
+<h1>GPSTracker-flutter-app</h1>
 
-Video: https://uninorte-my.sharepoint.com/:v:/g/personal/sastoquek_uninorte_edu_co/EZXEAMfBezFBo72vHb8QekUBup2-X97GABWyk_9XPiH0nA?e=YgUBV0
+Proyecto en flutter cuyo objetivo es generar una aplicacion que pueda guardar registros de la localizacion del dispositivo de manera manual y poder eliminar dichos registros de manera general o especifica, para este proyecto se requerira de GetX, geolocator, rflutter_alert entre otras dependencias 
 
-Funcional con Android, iOS y Web
 
-![Tracker](https://user-images.githubusercontent.com/25647254/192416251-fdae4ea5-3149-4c08-bd3b-b37e23c48f34.gif)
+<h2>DEMO DE LA APLICACION</h2>
 
-Solución:
 
-https://github.com/MisionTIC4b/f_gps_tracker
+https://user-images.githubusercontent.com/114000553/206080958-3a2ce240-2d6e-4848-82b6-778d774b4a3a.mp4
+
+
+
+<h2>INTEGRANTES DEL GRUPO DERARROLLADOR</h2> 
+
+<ul>
+  <li>Jorge Mario Acevedo Salcedo</li>
+  <li>Jorge Alejandro González Rodríguez</li>
+  <li>Jorge Perez Pomarico </li>
+  <li>Ivan Noguera Sáenz </li>
+</ul>
