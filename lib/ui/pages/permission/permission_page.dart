@@ -29,6 +29,7 @@ class _LocationState extends State<PermissionPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("GPS Tracker"),
+        centerTitle: true,
       ),
       body: FutureBuilder<LocationPermission>(
         future: _permissionStatus,
